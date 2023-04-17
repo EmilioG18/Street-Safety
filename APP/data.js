@@ -39,7 +39,27 @@ module.exports = function () {
 		idsuscripcion:3
       },
     
-    ]
+    ],
+	Delitos: [
+		{
+		  idDelito:1,
+		  Hora:"12:30",
+		  Fecha:"12 de mayo",
+		  Distrito:"Surco",
+		  Distrito_idZona:"Parque villaalegre",
+		  IdTipoDelitos: "Robo"
+
+		},
+		{
+		  idDelito:2,
+		  Hora:"11:34",
+		  Fecha:"17 de mayo",
+		  Distrito:"Molina",
+		  Distrito_idZona:"Por ahí",
+		  IdTipoDelitos: "Robo"
+		},
+
+	]
   }
   return data
 }
