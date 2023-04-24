@@ -1,10 +1,8 @@
-import { Time } from "@angular/common";
-
 export class Delitos {
     idDelito:number=0;
     Hora:string="";
-    Fecha:string="";
+    Fecha:Date = new Date(Date.now());
     Distrito:string="";
-    Distrito_idZona:string="";
-    IdTipoDelitos:string="";
+    Distrito_idZona:number=0;
+    IdTipoDelitos:number=0;
     }

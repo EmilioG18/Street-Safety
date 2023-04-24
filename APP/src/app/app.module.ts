@@ -11,21 +11,26 @@ import { MatTableModule } from '@angular/material/table';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatNativeDateModule } from '@angular/material/core';
 import { FormsModule } from '@angular/forms'
-import {MatInputModule} from '@angular/material/input'
-import {MatSelectModule} from '@angular/material/select'
-import {MatDatepickerModule} from '@angular/material/datepicker'
+import{MatInputModule} from '@angular/material/input'
+import{MatSelectModule} from '@angular/material/select'
+import{MatDatepickerModule} from '@angular/material/datepicker'
 import { MatButtonModule } from '@angular/material/button';
 import { UsuariosCreaditaComponent } from './page/usuarios/usuarios-creadita/usuarios-creadita.component';
-import { DelitosComponent } from './delitos/delitos.component';
+import { ToolbarComponent } from './page/toolbar/toolbar.component';
+import { MatToolbarModule} from '@angular/material/toolbar';
+import{MatIconModule} from'@angular/material/icon';
+import {MatMenuModule} from '@angular/material/menu';
+import { DelitosComponent } from './page/delitos/delitos.component';
 import { DelitosListarComponent } from './page/delitos/delitos-listar/delitos-listar.component';
 import { DelitosCreaditaComponent } from './page/delitos/delitos-creadita/delitos-creadita.component';
 
 @NgModule({
   declarations: [
-   AppComponent,
-   UsuariosComponent,
+    AppComponent,
+    UsuariosComponent,
    UsuariosListarComponent,
    UsuariosCreaditaComponent,
+   ToolbarComponent,
    DelitosComponent,
    DelitosListarComponent,
    DelitosCreaditaComponent,
@@ -44,8 +49,9 @@ import { DelitosCreaditaComponent } from './page/delitos/delitos-creadita/delito
     MatSelectModule,
     MatDatepickerModule,
     MatButtonModule,
-    
-  
+    MatToolbarModule,
+    MatIconModule,
+    MatMenuModule
    
   ],
   providers: [],

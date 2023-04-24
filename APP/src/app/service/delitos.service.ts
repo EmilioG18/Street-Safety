@@ -25,4 +25,10 @@ export class DelitosService {
   getlist(){
     return this.listaCambio.asObservable();
   }
+  listId(idDelitos: number) {
+    return this.http.get<Delitos>(`${this.url}/${idDelitos}`);
+  }
+  update(Delitos: Delitos) {
+    return this.http.put(this.url + '/' + Delitos.idDelito, Delitos);
+  }
 }

@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import {Route, Router} from '@angular/router';
+import {ActivatedRoute, Router, Params} from '@angular/router';
 import { DelitosService } from 'src/app/service/delitos.service';
 import { FormGroup, FormControl } from '@angular/forms';
 import { Delitos } from 'src/app/model/Delitos';
+import * as moment from 'moment';
+
 
 @Component({
   selector: 'app-delitos-creadita',
@@ -10,12 +12,20 @@ import { Delitos } from 'src/app/model/Delitos';
   styleUrls: ['./delitos-creadita.component.css']
 })
 export class DelitosCreaditaComponent implements OnInit {
+  idDelito:number=0;
+  edicion:boolean=false;
   form: FormGroup=new FormGroup({});
   delitos: Delitos=new Delitos();
   mensaje: string="";
+  maxFecha: Date = moment().add(-1, 'days').toDate();
 
-  constructor(private dS: DelitosService, private router:Router){}
+  constructor(private dS: DelitosService, private router:Router, private route:ActivatedRoute){}
   ngOnInit(): void {
+    this.route.params.subscribe((data:Params)=>{
+       this.idDelito=data['idDelito'];
+       this.edicion=data['idDelito'] !=null;
+       this.init();
+    });
       this.form= new FormGroup({
         idDelito: new FormControl(),
         Hora: new FormControl(),
@@ -32,17 +42,39 @@ export class DelitosCreaditaComponent implements OnInit {
     this.delitos.Distrito=this.form.value['Distrito'];
     this.delitos.Distrito_idZona=this.form.value['Distrito_idZona'];
     this.delitos.IdTipoDelitos=this.form.value['IdTipoDelitos'];
-    if (this.form.value['Hora'].lenght > 0){
+    if (this.form.value['Distrito'].lenght > 0){
+      if(this.edicion){
+        this.dS.update(this.delitos).subscribe(() =>{
+          this.dS.list().subscribe((data)=>{
+            this.dS.setlist(data);
+          });
+        });
+      }else{
       this.dS.insert(this.delitos).subscribe(data =>{
         this.dS.list().subscribe(data =>{
          this.dS.setlist
-        })
-      })
-      this.router.navigate(['delitos']);
+        });
+      });
+    }
+     this.router.navigate(['delitos']);
     }else{
-      this.mensaje = "Ingrese la hora !!";
+      this.mensaje = "Ingrese el distrito !!";
     }
 
+  }
+  init(){
+    if(this.edicion){
+      this.dS.listId(this.idDelito).subscribe((data)=>{
+        this.form = new FormGroup({
+          idDelito: new FormControl(data.idDelito),
+          Hora: new FormControl(data.Hora),
+          Fecha: new FormControl(data.Fecha),
+          Distrito: new FormControl(data.Distrito),
+          Distrito_idZona: new FormControl(data.Distrito_idZona),
+          IdTipoDelitos: new FormControl(data.IdTipoDelitos),
+        });
+      });
+    }
   }
 
 }

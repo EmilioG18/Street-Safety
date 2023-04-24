@@ -27,5 +27,11 @@ return this.http.post(this.url,usuario);
   getlist(){
     return this.listaCambio.asObservable();
   }
+  listId(id: number) {
+    return this.http.get<Usuario>(`${this.url}/${id}`);
+  }
+  update(usuario: Usuario) {
+    return this.http.put(this.url + '/' + usuario.id, usuario);
+  }
   
 }

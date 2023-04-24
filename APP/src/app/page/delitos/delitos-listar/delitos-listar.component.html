@@ -13,13 +13,13 @@
           <h1>Lista de delitos</h1>
         </div>
         <div style="text-align: right;">
-          <button mat-raised-button color="warn" routerLink="/usuarios/nuevo">Nuevo</button>
+          <button mat-raised-button color="warn" routerLink="/delitos/nuevo">Nuevo</button>
         </div>
         <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
         
           
           <ng-container matColumnDef="idDelito">
-            <th mat-header-cell *matHeaderCellDef>ID</th>
+            <th mat-header-cell *matHeaderCellDef>idDelito</th>
             <td mat-cell *matCellDef="let element">{{ element.idDelito }}</td>
           </ng-container>
     
@@ -31,7 +31,7 @@
           
           <ng-container matColumnDef="Fecha">
             <th mat-header-cell *matHeaderCellDef>Fecha</th>
-            <td mat-cell *matCellDef="let element">{{ element.Fecha }}</td>
+            <td mat-cell *matCellDef="let element">{{ element.Fecha|date:'dd/MM/yyyy'}}</td>
           </ng-container>
           
           <ng-container matColumnDef="Distrito">
@@ -40,13 +40,20 @@
           </ng-container>
 
           <ng-container matColumnDef="Distrito_idZona">
-            <th mat-header-cell *matHeaderCellDef>zona</th>
+            <th mat-header-cell *matHeaderCellDef>Distrito_idZona</th>
             <td mat-cell *matCellDef="let element">{{ element.Distrito_idZona }}</td>
           </ng-container>
 
           <ng-container matColumnDef="IdTipoDelitos">
             <th mat-header-cell *matHeaderCellDef>IdTipoDelitos</th>
             <td mat-cell *matCellDef="let element">{{ element.IdTipoDelitos }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="accion1">
+            <th mat-header-cell *matHeaderCellDef>Acción01</th>
+            <td mat-cell *matCellDef="let element">
+              <button mat-raised-button color="warn" [routerLink]="['edit', element.idDelito]">Actualizar</button>
+            </td>
           </ng-container>
     
           <tr mat-header-row *matHeaderRowDef="displayColumns"></tr>

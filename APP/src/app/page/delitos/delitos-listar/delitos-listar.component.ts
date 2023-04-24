@@ -11,7 +11,7 @@ import { DelitosService } from 'src/app/service/delitos.service';
 export class DelitosListarComponent implements OnInit{
   lista:Delitos[]=[];
   dataSource:MatTableDataSource<Delitos>= new MatTableDataSource();
-  displayColumns:string[]=['idDelito', 'Hora', 'Fecha', 'Distrito', 'Distrito_idZona', 'IdTipoDelitos']
+  displayColumns:string[]=['idDelito', 'Hora', 'Fecha', 'Distrito', 'Distrito_idZona', 'IdTipoDelitos','accion1']
   constructor(private dS:DelitosService){}
   ngOnInit(): void {
       this.dS.list().subscribe((data)=>{

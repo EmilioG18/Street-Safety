@@ -42,23 +42,22 @@ module.exports = function () {
     ],
 	Delitos: [
 		{
-		  idDelito:1,
-		  Hora:"12:30",
-		  Fecha:"12 de mayo",
-		  Distrito:"Surco",
-		  Distrito_idZona:"Parque villaalegre",
-		  IdTipoDelitos: "Robo"
-
+			idDelito:1,
+            Hora:"12",
+            Fecha:"2000-10-10",
+            Distrito:"Surco",
+            Distrito_idZona:1,
+            IdTipoDelitos:2
 		},
-		{
-		  idDelito:2,
-		  Hora:"11:34",
-		  Fecha:"17 de mayo",
-		  Distrito:"Molina",
-		  Distrito_idZona:"Por ahí",
-		  IdTipoDelitos: "Robo"
-		},
-
+	    {
+			idDelito:2,
+            Hora:"11",
+            Fecha:"2000-10-19",
+            Distrito:"Surco",
+            Distrito_idZona:3,
+            IdTipoDelitos:5
+		}
+	
 	]
   }
   return data
