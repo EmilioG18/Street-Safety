@@ -42,7 +42,7 @@ module.exports = function () {
     ],
 	Delitos: [
 		{
-			idDelito:1,
+			id:1,
             Hora:"12",
             Fecha:"2000-10-10",
             Distrito:"Surco",
@@ -50,7 +50,7 @@ module.exports = function () {
             IdTipoDelitos:2
 		},
 	    {
-			idDelito:2,
+			id:2,
             Hora:"11",
             Fecha:"2000-10-19",
             Distrito:"Surco",

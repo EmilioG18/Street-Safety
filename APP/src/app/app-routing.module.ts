@@ -17,7 +17,7 @@ const routes: Routes = [
   {
     path: 'delitos', component:DelitosComponent, children:[
       {path:'nuevo', component:DelitosCreaditaComponent},
-      {path:'edit/:idDelito', component:DelitosCreaditaComponent}
+      {path:'edit/:id', component:DelitosCreaditaComponent}
     ]
   }
 ];

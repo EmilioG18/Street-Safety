@@ -1,5 +1,5 @@
 export class Delitos {
-    idDelito:number=0;
+    id:number=0;
     Hora:string="";
     Fecha:Date = new Date(Date.now());
     Distrito:string="";

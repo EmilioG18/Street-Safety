@@ -23,7 +23,8 @@ import {MatMenuModule} from '@angular/material/menu';
 import { DelitosComponent } from './page/delitos/delitos.component';
 import { DelitosListarComponent } from './page/delitos/delitos-listar/delitos-listar.component';
 import { DelitosCreaditaComponent } from './page/delitos/delitos-creadita/delitos-creadita.component';
-
+import { DelitosDialogoComponent } from './page/delitos/delitos-listar/delitos-dialogo/delitos-dialogo.component';
+import { MatDialogModule} from '@angular/material/dialog'
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,6 +35,7 @@ import { DelitosCreaditaComponent } from './page/delitos/delitos-creadita/delito
    DelitosComponent,
    DelitosListarComponent,
    DelitosCreaditaComponent,
+   DelitosDialogoComponent,
    
   ],
   imports: [
@@ -51,7 +53,9 @@ import { DelitosCreaditaComponent } from './page/delitos/delitos-creadita/delito
     MatButtonModule,
     MatToolbarModule,
     MatIconModule,
-    MatMenuModule
+    MatMenuModule,
+    MatDialogModule
+    
    
   ],
   providers: [],

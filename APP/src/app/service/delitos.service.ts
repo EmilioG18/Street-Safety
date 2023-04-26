@@ -12,6 +12,7 @@ const base_url=enviroment.base;
 export class DelitosService {
   private url = `${base_url}/delitos`;
   private listaCambio = new Subject<Delitos[]>()
+  private confirmaEliminacion = new Subject<Boolean>()
   constructor(private http: HttpClient) {}
   list(){
     return this.http.get<Delitos[]>(this.url);
@@ -25,10 +26,20 @@ export class DelitosService {
   getlist(){
     return this.listaCambio.asObservable();
   }
-  listId(idDelitos: number) {
-    return this.http.get<Delitos>(`${this.url}/${idDelitos}`);
+  listId(id: number) {
+    return this.http.get<Delitos>(`${this.url}/${id}`);
   }
   update(Delitos: Delitos) {
-    return this.http.put(this.url + '/' + Delitos.idDelito, Delitos);
+    return this.http.put(this.url +'/'+ Delitos.id, Delitos);
+  }
+  eliminar(id: number) {
+
+    return this.http.delete(`${this.url}/${id}`);
+  }
+  getConfirmaEliminacion() {
+    return this.confirmaEliminacion.asObservable();
+  }
+  setConfirmaEliminacion(estado: Boolean) {
+    this.confirmaEliminacion.next(estado);
   }
 }
