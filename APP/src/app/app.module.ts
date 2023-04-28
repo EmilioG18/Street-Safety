@@ -16,6 +16,13 @@ import{MatSelectModule} from '@angular/material/select'
 import{MatDatepickerModule} from '@angular/material/datepicker'
 import { MatButtonModule } from '@angular/material/button';
 import { UsuariosCreaditaComponent } from './page/usuarios/usuarios-creadita/usuarios-creadita.component';
+import { ToolbarComponent } from './page/toolbar/toolbar.component';
+import { MatToolbarModule} from '@angular/material/toolbar';
+import{MatIconModule} from'@angular/material/icon';
+import {MatMenuModule} from '@angular/material/menu';
+import { UsuariosElimiarComponent } from './page/usuarios/usuarios-listar/usuarios-elimiar/usuarios-elimiar.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { FooterComponent } from './page/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +30,10 @@ import { UsuariosCreaditaComponent } from './page/usuarios/usuarios-creadita/usu
     UsuariosComponent,
    UsuariosListarComponent,
    UsuariosCreaditaComponent,
+   ToolbarComponent,
+   UsuariosElimiarComponent,
+   FooterComponent
+  
    
   ],
   imports: [
@@ -38,8 +49,11 @@ import { UsuariosCreaditaComponent } from './page/usuarios/usuarios-creadita/usu
     MatSelectModule,
     MatDatepickerModule,
     MatButtonModule,
-    
-  
+    MatToolbarModule,
+    MatIconModule,
+    MatMenuModule,
+    MatDialogModule
+
    
   ],
   providers: [],
