@@ -1,0 +1,42 @@
+module.exports=function(){
+  var data={
+    Suscripcion:[
+      {
+        id:1,
+        idtipo_membresia:"1",
+        fecha_inicio:"04-07-2023",
+        fecha_fin:"07-07-2023",
+        idpago:"P01",
+      },
+      {
+        id:2,
+        idtipo_membresia:"1",
+        fecha_inicio:"04-16-2023",
+        fecha_fin:"07-16-2023",
+        idpago:"P02",
+      },
+      {
+        id:3,
+        idtipo_membresia:"2",
+        fecha_inicio:"05-20-2023",
+        fecha_fin:"11-20-2023",
+        idpago:"P03",
+      },
+      {
+        id:4,
+        idtipo_membresia:"1",
+        fecha_inicio:"04-10-2023",
+        fecha_fin:"07-10-2023",
+        idpago:"P04",
+      },
+      {
+        id:5,
+        idtipo_membresia:"2",
+        fecha_inicio:"06-01-2023",
+        fecha_fin:"12-01-2023",
+        idpago:"P05",
+      }
+    ]
+  }
+  return data
+}
