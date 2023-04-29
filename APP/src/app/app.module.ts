@@ -3,46 +3,46 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HttpClientModule } from '@angular/common/http';
-import { UsuariosComponent } from './page/usuarios/usuarios.component';
-import { UsuariosListarComponent } from './page/usuarios/usuarios-listar/usuarios-listar.component';
+import {HttpClientModule,HttpClient,HttpHeaders,} from '@angular/common/http';
+import { SuscripcionComponent } from './page/suscripcion/suscripcion.component';
+import { SuscripcionListarComponent } from './page/suscripcion/suscripcion-listar/suscripcion-listar.component';
 import { MatTableModule } from '@angular/material/table';
-import { ReactiveFormsModule } from '@angular/forms';
-import { MatNativeDateModule } from '@angular/material/core';
-import { FormsModule } from '@angular/forms'
-import{MatInputModule} from '@angular/material/input'
-import{MatSelectModule} from '@angular/material/select'
-import{MatDatepickerModule} from '@angular/material/datepicker'
-import { MatButtonModule } from '@angular/material/button';
-import { UsuariosCreaditaComponent } from './page/usuarios/usuarios-creadita/usuarios-creadita.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {ReactiveFormsModule}from'@angular/forms';
+import {MatNativeDateModule}from '@angular/material/core';
+import {MatDialogModule}from '@angular/material/dialog';
+import {FormsModule}from '@angular/forms';
+import {MatSelectModule}from '@angular/material/select';
+import { SuscripcionCreaeditaComponent } from './page/suscripcion/suscripcion-creaedita/suscripcion-creaedita.component';
+import { SuscripcionDialogoComponent } from './page/suscripcion/suscripcion-listar/suscripcion-dialogo/suscripcion-dialogo.component'
+import {MatDatepickerModule}from '@angular/material/datepicker';
+import {MatInputModule} from '@angular/material/input';
 
 @NgModule({
   declarations: [
     AppComponent,
-    UsuariosComponent,
-   UsuariosListarComponent,
-   UsuariosCreaditaComponent,
-   
+    SuscripcionComponent,
+    SuscripcionListarComponent,
+    SuscripcionCreaeditaComponent,
+    SuscripcionDialogoComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule, 
     HttpClientModule,
     MatTableModule,
+    BrowserAnimationsModule,
     ReactiveFormsModule,
     MatNativeDateModule,
     FormsModule,
-    MatInputModule,
     MatSelectModule,
     MatDatepickerModule,
-    MatButtonModule,
-    
-  
-   
+    MatNativeDateModule,
+    ReactiveFormsModule,
+    MatDialogModule,
+    MatInputModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

@@ -1,18 +1,19 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { UsuariosComponent } from './page/usuarios/usuarios.component';
-import { UsuariosCreaditaComponent } from './page/usuarios/usuarios-creadita/usuarios-creadita.component';
+import { SuscripcionComponent } from './page/suscripcion/suscripcion.component';
+import { SuscripcionCreaeditaComponent } from './page/suscripcion/suscripcion-creaedita/suscripcion-creaedita.component';
 
 const routes: Routes = [
   {
-    path:'usuarios', component:UsuariosComponent,children:[
-      {path:'nuevo', component:UsuariosCreaditaComponent}
-    ]
-  }
+    path: 'suscripcion',component: SuscripcionComponent,children: [
+      {path:'nuevo',component:SuscripcionCreaeditaComponent},
+      {path: 'edicion/:id', component: SuscripcionCreaeditaComponent },
+    ],
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
